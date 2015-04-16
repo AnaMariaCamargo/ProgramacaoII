@@ -12,14 +12,15 @@ public class Cassino {
     
       while(opcao!=0){
           
-      opcao = Integer.parseInt(JOptionPane.showInputDialog("Digite a opcao desejada: \n 1 - Criar conta \n2 - Entrar na conta \n3 - Adicionar cash na conta \n4 - Comprar roupa 0 - Sair"));
+      opcao = Integer.parseInt(JOptionPane.showInputDialog("Digite a opcao desejada: \n 1 - Criar conta \n2 - Entrar na conta \n3 - Adicionar cash na conta \n4 - Comprar roupa \n5- Dado \n0 - Sair"));
         if(opcao==1){
              Boolean deucerto=conta.realizarCadastro(JOptionPane.showInputDialog("Digite o seu nome: "), JOptionPane.showInputDialog("Digite o login que deseja usar: "), JOptionPane.showInputDialog("Digite a senha: "), JOptionPane.showInputDialog("Confirme a sua senha:"));
         
         if(deucerto==true)
         JOptionPane.showMessageDialog(null, "A sua conta foi criada com sucesso!");
         else
-        JOptionPane.showMessageDialog(null, "A sua conta não pode ser criada!");}
+        JOptionPane.showMessageDialog(null, "A sua conta não pode ser criada!");
+        }
         else
         if(opcao==2){
         Boolean senha;
@@ -41,15 +42,32 @@ public class Cassino {
         }
         if(opcao==4){
             Boolean item;
-            
             item=conta.comprarRoupa(JOptionPane.showInputDialog("Roupa \n 1-terno 40\n 2-smoking 45\n 3-vestido rosa 35\n 4-tubinho dourado 55\n Acessorios \n5- relogio dourado 50\n 6-sem relogio 100\n 7- pulseira preta 30\n 8- pulseira rosa 60 \n Calcados\n 9- sem sapato 100\n 10-sapato de luxo preto 20\n 11- nike rasgado 80\n 12- sapato furado na ponta 150"));
             if(item==true)
+                
                 JOptionPane.showMessageDialog(null, "A compra foi feita com sucesso!");
             else JOptionPane.showMessageDialog(null, "A compra não foi feita!");
+        }
+           if (opcao==5){
+                   
+                   //nuimero goldsap e numero dados
+                    Dados d = new Dados();
+                    
+                    d.setEscolhauser(Integer.parseInt(JOptionPane.showInputDialog("Informe a soma dos dados:")));
+                    d.setGoldsap(Double.parseDouble((JOptionPane.showInputDialog("Informe golds para a aposta"))));
+                    Double sobrou= d.escolhajog();
+                       
+                    JOptionPane.showMessageDialog (null, "Dado 1 caio no numero: " + d.getDado1());
+                    JOptionPane.showMessageDialog  (null, "Dado 2 caiu no numero:" + d.getDado2());
+                    //sobrou = conta.getGold() + sobrou;
+                     
+                    
+                    JOptionPane.showMessageDialog(null,"Os Golds atuais são:"+ sobrou);
+                     // JOptionPane.showInputDialog("escolha o numero que voce quer");
+           }
+           
             
+        }
             
-            
-          }
-      }
-   }
-}
+          
+      }}

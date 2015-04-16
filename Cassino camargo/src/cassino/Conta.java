@@ -306,6 +306,10 @@ public class Conta {
         }
         return certo;
     }
+
+    double setGold() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
                     
         
